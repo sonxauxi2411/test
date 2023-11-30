@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question with Checkbox Input</title>
+  <style>
+    /* CSS để trang trí và căn chỉnh giao diện */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .question {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <div class="question">
+    <h2>Câu hỏi của bạn</h2>
+    <label>
+      <input type="checkbox" name="answer" value="option1"> Lựa chọn 1
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="answer" value="option2"> Lựa chọn 2
+    </label>
+    <br>
+    <label>
+      <input type="checkbox" name="answer" value="option3"> Lựa chọn 3
+    </label>
+    <br>
+    <!-- Nút để người dùng gửi kết quả -->
+    <button onclick="getSelectedOptions()">Gửi</button>
+  </div>
+
+  <script>
+    // JavaScript để lấy kết quả khi người dùng chọn checkbox và gửi kết quả
+    function getSelectedOptions() {
+      const selectedOptions = document.querySelectorAll('input[name="answer"]:checked');
+      const selectedValues = Array.from(selectedOptions).map(option => option.value);
+      // In kết quả ra console
+      console.log('Các lựa chọn đã chọn:', selectedValues);
+      // Bạn có thể xử lý dữ liệu ở đây, ví dụ: gửi lên server, hiển thị thông báo, vv.
+    }
+  </script>
+</body>
+</html>
